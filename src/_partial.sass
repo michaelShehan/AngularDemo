@@ -1,0 +1,23 @@
+$black: #333
+$white: #fff
+$blue: #0078d7
+$green: #107c10
+$red: #a80000
+$darkBlue: #002050
+$orange: #d83b01
+$yellow: #ffb900
+$lightBlue: #4668c5
+$grey: #d2d2d2
+$grey1: rgba(0,0,0,0.75)
+$transparentBlue: rgba(0, 120, 215, 0.1)
+$greyLight: #f0f0f0
+
+$baseFontsize: 16px
+
+@mixin fontSizer($fontSize)
+    font-size: $fontSize/$baseFontsize * 1rem 
+    
+@mixin boxShadow($hLength, $vLength, $blueRadius, $spreadRadius, $shadowColor)
+    -webkit-box-shadow: $hLength $vLength $blueRadius $spreadRadius $shadowColor;
+    -moz-box-shadow: $hLength $vLength $blueRadius $spreadRadius $shadowColor;
+    box-shadow: $hLength $vLength $blueRadius $spreadRadius $shadowColor;

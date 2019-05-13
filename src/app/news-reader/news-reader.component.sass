@@ -1,0 +1,61 @@
+@import '../../partial'
+
+.sources
+    margin-bottom: 20px
+    padding-bottom: 20px
+.srcDetails
+    padding: 10px
+    border: $grey solid 1px
+    border-radius: 5px
+    @include boxShadow(2px, 2px, 5px, 0px, $grey1)
+    background-color: $transparentBlue
+    min-height: 186px
+    .srcDetailRow
+        margin-bottom: 10px
+        
+.articles
+    margin-top: 20px
+    .card
+        border: none
+        background-color: transparent
+        margin-bottom: 2px
+        .card-header
+            border: none
+            padding: 10px
+            .by-line
+                @include fontSizer(12px)
+                color: $green;
+            .dateline
+                @include fontSizer(12px)
+                color: $darkBlue
+                font-style: italic
+                padding-left: 40px
+        .card-body
+            img.articleImage
+                width: 100%
+        a.card-header:hover
+            text-decoration: none
+            background-color: $greyLight
+    .article-record
+        margin-bottom: 10px
+        border-bottom: $blue solid 1px
+        background-color: $transparentBlue
+        .record-content
+            padding: 10px
+        .title
+            display: block
+            @include fontSizer(16px)
+        .by-line
+            @include fontSizer(12px)
+            color: $green;
+        .dateline
+            @include fontSizer(12px)
+            color: $darkBlue
+            font-style: italic
+            padding-left: 40px
+        img.articleImage
+            width: 100%
+            max-height: 100px
+        a:hover
+            text-decoration: none
+            

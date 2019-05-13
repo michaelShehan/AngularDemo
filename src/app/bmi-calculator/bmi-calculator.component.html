@@ -1,0 +1,102 @@
+<!-- CALCULATOR COMPONENT -->
+<div class="bmiCalculator">
+    
+        <div class="row bottom-gap">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for=txtHeight>Your Height</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="no-bullets">
+                                    <li>
+                                        <input type="radio" [(ngModel)]="heightType" name="heightType" value="metric" checked />Centimeter
+                                    </li>
+                                    <li>
+                                        <input type="radio" [(ngModel)]="heightType" name="heightType" value="imperial" />Feet and inches
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="number" id="txtHeight" [(ngModel)]="userHeightFeet" class="form-control" name="userHeightFeet" required />
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-md-6" *ngIf="heightType == 'imperial'">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="spacer"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="txtHeight" class="label-inches">(inches)</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="number" id="txtHeight" [(ngModel)]="userHeightInches" class="form-control" name="userHeightInches" />
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <label for=txtHeight>Your Weight</label>
+                        </div>
+                        <div class="col-md-12">
+                            <ul class="no-bullets">
+                                <li>
+                                    <input type="radio" [(ngModel)]="weightType" name="weightType" value="metric" checked  />Kg
+                                </li>
+                                <li>
+                                    <input type="radio" [(ngModel)]="weightType" name="weightType" value="imperial" />Pounds
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="number" id="txtWeight" [(ngModel)]="userWeight" class="form-control" required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>&nbsp;</label>
+                        <input type="submit" (click)="calculate()" class="btn btn-primary" value="Calculate"/>
+                    </div>
+                </div>
+                <div class="row bottom-gap">
+                    <div class="col-md-12">
+                        <input type="reset"class="btn btn-default" value="Reset" (click)="resetValues()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="results-panel" [className]="textClass">
+                    <div class="panel-body">
+                        <p><strong>Results:</strong></p>
+                        <p>Your BMI value is</p>
+                        <h2 id="bmiText">{{userBMI}}</h2>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+    
+</div>

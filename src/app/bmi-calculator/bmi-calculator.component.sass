@@ -1,0 +1,45 @@
+
+@import '../../partial'
+
+.bmiCalculator
+    label
+        display: block
+        font-weight: bold
+        &.label-inches
+            font-weight: normal
+            padding-bottom: 10px
+    input[type='text']
+        display: block
+        width: 100%
+    input[type='radio']
+        display: inline-block
+        margin-right: 10px
+    .spacer
+        height: 57px
+    .panel#results-panel
+        border: #ccc solid 2px
+        border-radius: 4px
+        padding: 20px
+        min-height: 180px
+        &.under-weight
+            border-color: $yellow
+            h2
+                color: $yellow
+        &.ideal-weight
+            border-color: $green
+            h2
+                color: $green
+        &.over-weight
+            border-color: $orange
+            h2
+                color: $orange
+        &.obese
+            border-color: $red
+            h2
+                color: $red
+                
+    .btn
+        display: block
+        width: 100%
+        margin-bottom: 10px
+        

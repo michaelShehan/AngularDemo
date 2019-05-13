@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="h5">News Sources</h2>
+        <select class="form-control" (change)="selectSource()" [(ngModel)]="nsrc">
+            <option  *ngFor = "let ns of data.sources" [ngValue]="ns">{{ns.name}}</option>
+        </select>
+    </div>
+    <div class="col-md-8">
+        <h2 class="h5">News Source Details</h2>
+        <p *ngIf="!showDetails" class="text-warning">Please select a news source.</p>
+        <div class="srcDetails" *ngIf="showDetails">
+            <div class="row srcDetailRow">
+                <div class="col">
+                    Country Code: <span class="text-uppercase">{{countryCode}}</span>
+                </div>
+            </div>
+            <div class="row srcDetailRow">
+                <div class="col">
+                    {{desc}}
+                </div>
+            </div>
+            <div class="row srcDetailRow">                
+                <div class="col">
+                    <a href="{{linkURL}}" class="btn btn-primary btn-block" target="_blank">Go to {{name}}</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>   
+
+<div class="row articles">
+    <div class="col">
+        <div *ngFor="let newsArticle of articles.articles; let i = index" class="article-record">
+            <a class="row record-content" href="{{newsArticle.url}}" data-toggle="tooltip" data-placement="top" title="{{newsArticle.description}}" target="_blank">
+                <span class="col-md-2"><img src="{{newsArticle.urlToImage}}" class="articleImage" /></span>
+                <span class="col-md-10">
+                    <span class="title">{{newsArticle.title}}</span>
+                    <span class="by-line">By - {{newsArticle.author}}</span>
+                    <span class="dateline">{{newsArticle.publishedAt}}</span>
+                </span>
+            </a>
+        </div>
+        
+        <!--<div id="accordion" role="tablist">
+          <div class="card" *ngFor="let newsArticle of articles.articles; let i = index">
+              <a data-toggle="collapse" href="#collapse{{i}}" aria-expanded="true" class="card-header" role="tab" id="heading{{i}}">
+                  {{newsArticle.title}}
+                  <br />
+                  <span class="by-line">By - {{newsArticle.author}}</span>
+                      <span class="dateline">{{newsArticle.publishedAt}}</span>
+                </a>
+
+            <div id="collapse{{i}}" class="collapse" role="tabpanel" data-parent="#accordion">
+              <div class="card-body">
+                  
+                <div class="row">
+                    <div class="col-md-2">
+                      <img src="{{newsArticle.urlToImage}}" class="articleImage" />
+                    </div>
+                    <div class="col-md-10">
+                      <p>{{newsArticle.description}}</p>
+                        <a href="{{newsArticle.url}}" class="btn btn-info" target="_parent">Read the full story</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>-->
+    
+    </div>
+</div>
+
+

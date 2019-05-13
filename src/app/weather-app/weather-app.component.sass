@@ -1,0 +1,34 @@
+@import '../../partial'
+
+.weather-element
+    @include boxShadow(2px, 2px, 5px, 0px, $grey1)
+    padding: 10px
+    margin-bottom: 20px
+    h3
+        color: $blue
+    .info
+        @include fontSizer(12px)
+        text-transform: uppercase
+        color: $black
+    .temp
+        @include fontSizer(32px)
+        font-weight: bold
+        text-transform: uppercase
+        
+.weather-search
+    padding: 10px
+    margin-bottom: 20px
+    border-bottom: $blue solid 2px
+    .selected-city
+        text-align: center
+        padding: 10px
+        @include fontSizer(14px)
+        .title
+            font-weight: bold
+            
+.profile-list-item
+    padding: 10px 0
+    border-bottom: $grey solid 1px
+    margin-bottom: 10px
+    h5
+        @include fontSizer(14px)

@@ -1,0 +1,13 @@
+
+<section class="dashboard">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="tile-list">
+                <li *ngFor="let tiles of dashboardTiles">
+                    <a [routerLink]="tiles.tileLink" [className]="tiles.tileColor">{{tiles.tileName}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+

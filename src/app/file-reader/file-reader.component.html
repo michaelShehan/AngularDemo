@@ -1,0 +1,25 @@
+<section class="post-reader">
+    <div class="row">
+        <div class="col-md-4 loader">            
+            <ul class="post-list">
+                <li *ngFor="let post of posts | paginate: { itemsPerPage: 10, currentPage: p }">
+                    <a href="javascript:void(0)" [id]="post.id" (click)="showPost(post.title, post.body)">{{post.title}}</a>
+                </li>
+            </ul>
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+        <div class="col-md-8">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>{{postTitle}}</h2>
+                </div>
+                <div class="panel-body">
+                    <p>{{postBody}}</p>
+                </div>
+            </div>
+                 
+            
+            
+        </div>
+    </div>
+</section>
